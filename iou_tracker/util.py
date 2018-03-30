@@ -73,6 +73,14 @@ def save_to_csv(out_path, tracks):
                 odict.writerow(row)
             id_ += 1
 
+def calcDist(bbox1,bbox2):
+  
+    bbox1 = np.array([float(x) for x in bbox1])
+    bbox2 = np.array([float(x) for x in bbox2])
+    
+    return np.linalg.norm(bbox1-bbox2)
+
+
 
 def iou(bbox1, bbox2):
     """

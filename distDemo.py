@@ -196,9 +196,8 @@ while(True):
     frame = cv2.resize(frame,(width/resize_ratio,height/resize_ratio))
     detections = detL.pop()
     parsed_detections = parse_detections(detections,target_labels)
-    #tracks = tracker.trackDistance(parsed_detections)
-    tracks = tracker.track(parsed_detections)
-
+    tracks = tracker.trackDistance(parsed_detections)
+    
     print(tracks)
     
     #dI/Ocnt is the change of people count by each frame
@@ -215,7 +214,7 @@ while(True):
     
     frame = cv2.resize(frame,(width/2,height/2))
     # Display the resulting frame
-    cv2.imshow('demo',frame)
+    cv2.imshow('distDemo',frame)
     cv2.waitKey(100)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
